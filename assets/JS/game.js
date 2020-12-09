@@ -5,11 +5,18 @@ var playerMoney = 10;
 
 console.log( playerName, playerAttack, playerHealth);
 
-var enemyName = "Roberto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+console.log(enemyNames.length);
+for(var i = 0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index");
+}
+
+var fight = function(enemyName) {
     window.alert("Welcome to Robot Gladiators!");
     
 var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -17,18 +24,18 @@ var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? En
 if (promptFight === "fight" || promptFight === "FIGHT" || promptFight === "Fight") {
 enemyHealth = enemyHealth - playerAttack;
 console.log(
-    playerName + " attacked" + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+    playerName + " attacked" + enemyNames[i] + ". " + enemyNames[i] + " now has " + enemyHealth + " health remaining."
 );
 if (enemyHealth <= 0) {
-    window.alert(enemyName + " has died!");
+    window.alert(enemyNames[i] + " has died!");
 }
 else {
-    window.alert(enemyName + " still has" + enemyHealth + " health remaining.");
+    window.alert(enemyNames[i] + " still has" + enemyHealth + " health remaining.");
 }
 
 playerHealth = playerHealth - enemyAttack;
 console.log(
-enemyName+ " attacked " + playerName + ". " + playerName + " now has " +playerHealth + " health remaining."
+enemyNames[0] + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
 );
 if (playerHealth <= 0) {
     window.alert(playerName + " has died!");
@@ -50,4 +57,12 @@ else {
 }
 }
 
-fight ()
+for(var i = 0; i , enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
+
+//Game States
+// "WIN" - Player robot has defeated all enemy robots
+//  *Fight all enemy robots
+//  *Defeat all enemy robots
+// "LOSE" - Player robot's health is zero or less
