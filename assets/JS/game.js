@@ -124,8 +124,16 @@ var randomNumber = function(min, max) {
     return value;
 };
 
+var getPlayerName = function() {
+    var name = "";
+    while (name === '' || name === null) {
+        name = prompt("What is your robot's name?");
+        }
+}
+
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -180,3 +188,4 @@ startGame();
 //  *Fight all enemy robots
 //  *Defeat all enemy robots
 // "LOSE" - Player robot's health is zero or less
+
